@@ -1,8 +1,8 @@
-Install Node
+Install Node:
 
   Tested with Node v14.16.0
 
-Install protractor
+Install protractor:
 ```
   npm install -g protractor
 ```
