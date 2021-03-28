@@ -6,17 +6,9 @@ import womensWear from '../pages/womensWear'
 import contactUs from '../pages/contactUs'
 
 
-describe ('Store Functions', () => {
+describe ('I should be able to register and navigate around the webpage', () => {
     beforeEach(async () => {
         await loginPage.goto();
-    });
-
-    it('should allow me to open the Contact us page', async () => {
-      await loginPage.contactUs.click();
-      await browser.driver.wait(
-                  ExpectedConditions.presenceOf(contactUs.contactUsMessage ),
-                  10000, 'element is not present');
-      expect(await contactUs.contactUsMessage.isDisplayed()).toBe(true);
     });
 
     it('should allow user creation', async () => {
@@ -50,6 +42,19 @@ describe ('Store Functions', () => {
       expect(await element(by.className('logout')).isDisplayed()).toBe(true);
     });
 
+    it('should allow me to send a message to customer service on the contact us page', async () => {
+      await loginPage.contactUs.click();
+      await browser.driver.wait(
+                  ExpectedConditions.presenceOf(contactUs.contactUsMessage ),
+                  10000, 'element is not present');
+      await contactUs.heading.click();
+      await contactUs.heading.sendKeys('Customer Service');
+      await contactUs.reference.sendKeys('0001230321');
+      await contactUs.contactUsMessage.sendKeys("Hello how are you?");
+      await contactUs.submit.click();
+      expect(await element(by.css('.alert.alert-success')).isDisplayed()).toBe(true);
+    });
+
     it('should allow me to navigate to womens wear', async () => {
       await loginPage.womensWear.click();
       await browser.driver.wait(
@@ -57,7 +62,5 @@ describe ('Store Functions', () => {
                   5000, 'element is not present');
       expect(await womensWear.title.isDisplayed()).toBe(true);
     });
-
-
 
 });
