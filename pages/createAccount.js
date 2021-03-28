@@ -2,7 +2,7 @@ browser.ignoreSynchronization = true;
 
 class CreateAccount {
   constructor() {
-    this.male_gender_checkbox = element(by.name('id_gender'));
+    this.male_gender_checkbox = element.all(by.name('id_gender')).first();
     this.first_name = element(by.name('customer_firstname'));
     this.last_name = element(by.name('customer_lastname'));
     this.password = element(by.id('passwd'));
