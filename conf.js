@@ -13,17 +13,7 @@ exports.config = {
     directConnect: true,
     SELENIUM_PROMISE_MANAGER: false,
 
-    specs: ['specs/*Spec.js'],
-    baseUrl: 'https://qualityshepherd.com',
-    framework: 'jasmine',
-
-    onPrepare: () => {
-        const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
-        jasmine.getEnv().addReporter(new SpecReporter({
-            spec: {
-                displayStacktrace: true
-            }
-        }));
+    specs: ['specs/*Spec.js']
     },
 
     capabilities: {
@@ -45,13 +35,5 @@ exports.config = {
                 'password_manager_enabled': false
             }
         }
-    },
-
-    jasmineNodeOpts: {
-        showColors: true,
-        displaySpecDuration: true,
-        // overrides jasmine's print method to report dot syntax for custom reports
-        print: () => {},
-        defaultTimeoutInterval: 50000
     }
 };
