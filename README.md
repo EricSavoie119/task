@@ -22,5 +22,6 @@ Run by going to root folder and:
 ```
 
 
-Functions goto, loaded, and inDom borrowed from protractor-example. 
+
+Functions ```goto```, ```loaded```, and ```inDom``` borrowed from protractor-example. 
 Elements of the conf.js borrowed from protractor-example.
