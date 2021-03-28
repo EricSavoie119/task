@@ -38,7 +38,7 @@ describe ('Store Functions', () => {
               300, 'element is not present');
             }
       catch (err) {
-        console.log('');
+        process.stdout.write("");
       };
       await createAccount.state.click();
       await createAccount.state.sendKeys(userData.state);
