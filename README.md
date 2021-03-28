@@ -1,3 +1,5 @@
+Tested on macOS Catalina v10.15.3
+
 Install Node:
 
   Tested with Node v14.16.0
