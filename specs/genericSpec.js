@@ -16,7 +16,7 @@ describe ('Store Functions', () => {
       await browser.driver.wait(
                   ExpectedConditions.presenceOf(contactUs.contactUsMessage ),
                   10000, 'element is not present');
-      expect(await contactUs.contactUsMessage.isDisplayed()).toBe(true);             
+      expect(await contactUs.contactUsMessage.isDisplayed()).toBe(true);
     });
 
     it('should allow user creation', async () => {
@@ -38,7 +38,7 @@ describe ('Store Functions', () => {
               300, 'element is not present');
             }
       catch (err) {
-        console.log('presence was intermittent');
+        console.log('');
       };
       await createAccount.state.click();
       await createAccount.state.sendKeys(userData.state);
