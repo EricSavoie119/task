@@ -13,8 +13,7 @@ exports.config = {
     directConnect: true,
     SELENIUM_PROMISE_MANAGER: false,
 
-    specs: ['specs/*Spec.js']
-    },
+    specs: ['specs/*Spec.js'],
 
     capabilities: {
         browserName: 'chrome',
